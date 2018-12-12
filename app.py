@@ -23,7 +23,8 @@ app.scripts.config.serve_locally = True
 
 colorscale = cl.scales['9']['qual']['Paired']
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/dash-stock-ticker-demo.csv')
+#df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/dash-stock-ticker-demo.csv')
+df = pd.read_csv('dash-stock-ticker-demo.csv')
 
 app.layout = html.Div([
     html.Div([
@@ -38,7 +39,8 @@ app.layout = html.Div([
                        'margin-top': '20px',
                        'margin-bottom': '0'
                        }),
-        html.Img(src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/logo/new-branding/dash-logo-by-plotly-stripe.png",
+#        html.Img(src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/logo/new-branding/dash-logo-by-plotly-stripe.png",
+        html.Img(src="sec-logo.png",
                 style={
                     'height': '100px',
                     'float': 'right'
