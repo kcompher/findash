@@ -1,7 +1,6 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-
 import colorlover as cl
 import datetime as dt
 import flask
@@ -19,8 +18,6 @@ server = app.server
 # app.scripts.config.serve_locally = False
 app.scripts.config.serve_locally = True
 
-
-
 colorscale = cl.scales['9']['qual']['Paired']
 
 #df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/dash-stock-ticker-demo.csv')
@@ -28,7 +25,7 @@ df = pd.read_csv('dash-stock-ticker-demo.csv')
 
 app.layout = html.Div([
     html.Div([
-        html.H2('Finance Explorer',
+        html.H2('Market Explore',
                 style={'display': 'inline',
                        'float': 'left',
                        'font-size': '2.65em',
@@ -39,8 +36,8 @@ app.layout = html.Div([
                        'margin-top': '20px',
                        'margin-bottom': '0'
                        }),
-#        html.Img(src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/logo/new-branding/dash-logo-by-plotly-stripe.png",
-        html.Img(src="assets/sec-seal.png",
+#       html.Img(src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/logo/new-branding/dash-logo-by-plotly-stripe.png",
+        html.Img(src="assets/dash-logo-by-plotly-stripe.png",
                 style={
                     'height': '100px',
                     'float': 'right'
@@ -51,7 +48,7 @@ app.layout = html.Div([
         id='stock-ticker-input',
         options=[{'label': s[0], 'value': str(s[1])}
                  for s in zip(df.Stock.unique(), df.Stock.unique())],
-        value=['YHOO', 'GOOGL'],
+        value=['AAPL', 'GOOGL'],
         multi=True
     ),
     html.Div(id='graphs')
